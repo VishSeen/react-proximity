@@ -1,0 +1,86 @@
+@import '../variables.scss';
+
+// Animation classes
+.hide-left {
+    transform: translateX(100%);
+}
+
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    transition: all 2s ease-in-out;
+
+	.logo {
+		z-index: 99;
+		a {
+			img {
+				width: 9rem;
+			}
+		}
+	}
+
+	.mobile-icon {
+		z-index: 99;
+		color: $primary-color;
+		&:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
+		span {
+			transition: all 0.6s ease;
+		}
+	}
+
+	.menu-list {
+		z-index: 98;
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: scroll;
+		transition: all .8s ease;
+		background: linear-gradient(90deg, #E83780 0%, #F18A25 100%);
+
+		ul {
+			margin: 4rem 2rem;
+			text-align: left;
+
+			li {
+				margin: 1rem 0;
+				padding: 1rem 0;
+
+				a {
+					font-size: 1.2rem;
+					&:hover {
+						opacity: 0.7;
+						letter-spacing: 1px;
+					}
+				}
+
+				.language {
+					border: 1px solid $primary-color;
+					width: 40%;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+
+					button {
+						padding: 0.5rem 1rem;
+					}
+				}
+			}
+		}
+	}
+}

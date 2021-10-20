@@ -1,0 +1,36 @@
+/*================================================*/
+/* Color combinations */
+/*================================================*/
+$primary-color: #ffffff;
+$secondary-color: #3b2143;
+$accent-color: #e30513;
+
+
+
+/*================================================*/
+/* Importing all local fonts */
+/*================================================*/
+@font-face {
+    font-family: Avenir-Black;
+    src: url(../src/fonts/Avenir-Black.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Book;
+    src: url(../src/fonts/Avenir-Book.ttf);
+}
+
+@font-face {
+    font-family: Avenir-Medium;
+    src: url(../src/fonts/Avenir-Medium.ttf);
+}
+
+
+
+/*================================================*/
+/* Media queries selectors */
+/*================================================*/
+// Large screen phones and up
+@mixin desktops {
+	@media only screen and (min-width: 1200px) { @content }
+}
