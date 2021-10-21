@@ -1,0 +1,92 @@
+@import '../variables.scss';
+
+///////////////////////////////////
+
+// Keyframes and animation classes
+.hidden {
+    transform: translateY(70%);
+    opacity: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0%);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+///////////////////////////////////
+
+header {
+    height: 75vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+	transition: all 0.3s ease-in-out;
+
+	.header-bg {
+		width: 100vw;
+		height: 100%;
+		video {
+			width: 100%;
+			display: none;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	.intro-text {
+		position: absolute;
+		text-align: center;
+		justify-self: center;
+		color: $primary-color;
+
+		h1 {
+			overflow: hidden;
+			margin: 0;
+			&:last-child span {
+				transition-delay: 500ms;
+			}
+			span {
+				display: block;
+				transition: opacity 1.6s ease, 1.3s transform ease-in-out;
+			}
+		}
+	}
+
+	.icon-scroll {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 1rem;
+		text-align: center;
+		color: $primary-color;
+		transition: all 2s ease-in-out;
+		animation: scroll 3s infinite;
+
+		a {
+			span {
+				font-size: 1rem;
+				padding: 0.5rem;
+				color: $primary-color;
+			}
+		}
+	}
+}

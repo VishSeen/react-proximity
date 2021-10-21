@@ -1,14 +1,9 @@
 @import './variables.scss';
 
-
+////////////////////////////////////////////////////////////////////////
 
 * {
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 
@@ -22,9 +17,6 @@ h2, h3 {
 
 h1 {
     font-size: 2rem;
-	@include desktops {
-		font-size: 5rem;
-	}
 }
 h2 {
     font-size: 1.35rem;
@@ -35,13 +27,15 @@ h4 {
     font-size: 0.65rem;
     transition: all 1.2s ease-in-out;
 }
+
 p {
     font-weight: 100;
     font-size: 0.9rem;
 }
+
 a {
     color: $secondary-color;
-    transition: all 1s ease;
+    transition: all 0.6s ease;
 }
 
 
@@ -68,39 +62,25 @@ button {
 	&:hover {
 		cursor: pointer;
 	}
-}
-button.active {
-    // font-family: Avenir-Black;
-	background-color: $primary-color;
-	color: $secondary-color;
+
+	&.active {
+		background-color: $primary-color;
+		color: $secondary-color;
+	}
 }
 
 
-body {
-    font-family: Avenir-Book;
-    margin: 0;
-    background-color: $secondary-color;
-    color: $secondary-color;
-    text-align: center;
-}
+////////////////////////////////////////////////////////////////////////
 
-header {
-    transition: all 0.3s ease-in-out;
-}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 
-main {
-    padding: 0 1rem;
-    transition: all 0.3s ease-in-out;
-}
-
-section {
-    padding-top: 4rem;
-}
-section .title {
-    margin-bottom: 2rem;
-}
-
-footer {
-    padding: 1rem;
-    margin-top: 2rem;
+	body {
+		font-family: Avenir-Book;
+		margin: 0;
+		background-color: $primary-color;
+		color: $secondary-color;
+		text-align: center;
+	}
 }

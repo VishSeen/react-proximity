@@ -4,7 +4,8 @@
 $primary-color: #ffffff;
 $secondary-color: #3b2143;
 $accent-color: #e30513;
-
+$grey-color: #909090;
+$black-color: #000000;
 
 
 /*================================================*/
@@ -30,7 +31,3 @@ $accent-color: #e30513;
 /*================================================*/
 /* Media queries selectors */
 /*================================================*/
-// Large screen phones and up
-@mixin desktops {
-	@media only screen and (min-width: 1200px) { @content }
-}

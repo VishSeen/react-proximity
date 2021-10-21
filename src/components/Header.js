@@ -1,34 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Header.scss';
+import HeroImage from '../img/video-poster.jpg';
+import Video from '../video/video.mp4';
+
+///////////////////////////////////
+
+const Header = () => {
+	const hidden = 'hidden';
+	const [visible, setVisible] = useState(hidden);
+
+	/**
+	 * Start up H1 animation on window load
+	 */
+	setTimeout(() => {
+		setVisible('');
+	}, 700);
 
 
-function Header() {
 	return (
 		<header>
-			<div class="header-bg">
-				<video poster="img/video-poster.jpg" loop autoplay muted>
-					<source src="img/video.mp4" type="video/mp4"></source>
+			<div className="header-bg">
+				<video poster={ HeroImage } loop autoPlay muted>
+					<source src={ Video } type="video/mp4"></source>
 				</video>
-				<img src="img/video-poster.jpg"></img>
+
+				<img src={ HeroImage }></img>
 			</div>
 
-			<div class="intro-text">
+			<div className="intro-text">
 				<h1>
-					<span class="hidden">
+					<span className={ visible }>
 						We make people
 					</span>
 				</h1>
 				<h1>
-					<span class="hidden">
+					<span className={ visible }>
 						more valuable to brands
 					</span>
 				</h1>
 			</div>
 
-			<div class="icon-scroll">
+			<div className="icon-scroll">
 				<a href="#main-content">
-					<span class="material-icons">south</span>
+					<span className="material-icons">south</span>
 				</a>
 			</div>
 		</header>
 	)
 }
+
+export default Header;

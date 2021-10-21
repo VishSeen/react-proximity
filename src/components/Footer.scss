@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+///////////////////////////////////
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    background: linear-gradient(90deg, #E83780 0%, #F18A25 100%);
+    color: $primary-color;
+	padding: 1rem;
+    margin-top: 2rem;
+
+	.copyright {
+		p {
+			font-size: 0.75rem;
+			a {
+				color: $primary-color;
+				font-size: 0.8rem;
+				&:hover {
+					color: $black-color;
+				}
+			}
+		}
+	}
+
+	.socials {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			li {
+				a {
+					img {
+						width: 40%;
+						transition: all 1s ease;
+						&:hover {
+						opacity: 0.5;
+					}
+					}
+				}
+			}
+		}
+	}
+}

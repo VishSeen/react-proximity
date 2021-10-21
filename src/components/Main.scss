@@ -1,0 +1,95 @@
+@import '../variables.scss';
+
+/////////////////////////////////
+
+main {
+	padding: 0 1rem;
+    transition: all 0.3s ease-in-out;
+	section {
+		padding-top: 4rem;
+		.title {
+			margin-bottom: 2rem;
+		}
+
+		&#sect-intro {
+			.image {
+				background-image: url('../img/intro-image.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				img {
+					width: 100%;
+				}
+			}
+
+			.texts {
+				background-color: $primary-color;
+				transition: all 1s;
+			}
+		}
+
+		&#sect-stories {
+			a {
+				font-size: 0.95rem;
+				&:hover {
+					color: #e30513;
+				}
+			}
+
+			.title {
+				img {
+					width: 20%;
+				}
+			}
+
+			.stories {
+				display: block;
+				margin-bottom: 2rem;
+
+				article {
+					color: $primary-color;
+					background: $grey-color;
+					padding: 1rem;
+					text-align: left;
+					margin: 1rem 0;
+					transition: opacity 1.3s ease-in-out, transform 1.2s ease-in-out, background 0.8s ease;
+					&:hover {
+						background-color: $secondary-color;
+						cursor: pointer;
+					}
+
+					&:last-child {
+						color: $primary-color;
+						transition-delay: 250ms;
+					}
+
+					a {
+						color: $primary-color;
+					}
+
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.scroll-top {
+		position: sticky;
+		bottom: 0.5rem;
+		display: flex;
+		justify-content: flex-end;
+		align-content: flex-end;
+
+		span {
+			display: flex;
+			align-items: center;
+			font-size: 0.95rem;
+			transition: all 0.8s ease;
+			&:hover {
+				cursor: pointer;
+				color: $accent-color;
+			}
+		}
+	}
+}

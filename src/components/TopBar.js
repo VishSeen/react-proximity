@@ -5,7 +5,7 @@ import LanguageSwitch from './LanguageSwitch';
 
 //////////////////////////////////////////
 
-function TopBar() {
+const TopBar = () => {
 	const hideLeft = 'hide-left';
 	const iconNav = 'segment';
 	const closeIcon = ' close';

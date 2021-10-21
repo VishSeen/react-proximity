@@ -3,7 +3,7 @@ import React, {useState } from 'react';
 
 ///////////////////////////////////////
 
-function LanguageSwitch() {
+const LanguageSwitch = () => {
 	const [enActive, setEnActive] = useState('active');
 	const [frActive, setFrActive] = useState('');
 
@@ -22,9 +22,9 @@ function LanguageSwitch() {
 
 	return (
 		<div className="language">
-			<button className={enActive} onClick={() => switchLanguage("en")}>EN</button>
+			<button className={ enActive } onClick={ () => switchLanguage("en") }>EN</button>
 
-			<button className={frActive} onClick={() => switchLanguage("fr")}>FR</button>
+			<button className={ frActive } onClick={ () => switchLanguage("fr") }>FR</button>
 		</div>
 	)
 }
