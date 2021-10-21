@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-///////////////////////////////////
+/////////////////////////////////////////////////////
 
 // Keyframes and animation classes
 .hidden {
@@ -25,7 +25,7 @@
     }
 }
 
-///////////////////////////////////
+/////////////////////////////////////////////////////
 
 header {
     height: 75vh;
@@ -87,6 +87,59 @@ header {
 				padding: 0.5rem;
 				color: $primary-color;
 			}
+		}
+	}
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+/* Tablets, 600px and up */
+@media only screen and (min-width: 600px) {
+	header {
+		height: auto;
+		.header-bg {
+			video {
+				display: block;
+			}
+
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+/* Large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	header {
+        height: 100vh;
+        overflow: hidden;
+		.header-bg {
+			video {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.icon-scroll span {
+			padding: 1rem;
+		}
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+/* Extra Large Destops and Tv, 1440px and up) */
+@media only screen and (min-width: 1440px) {
+	header {
+		.icon-scroll a span {
+			font-size: 1.6rem;
+			padding: 2.5rem;
 		}
 	}
 }
