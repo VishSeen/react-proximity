@@ -1,4 +1,4 @@
-import logo from './img/logo.png';
+
 import TopBar from './components/TopBar.js';
 import Header from './components/Header.js';
 import Main from './components/Main.js';

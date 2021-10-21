@@ -1,11 +1,13 @@
 @import '../variables.scss';
 
+////////////////////////////////////////////////
+
 // Animation classes
 .hide-left {
     transform: translateX(100%);
 }
 
-
+////////////////////////////////////////////
 .top-bar {
     display: flex;
     flex-direction: row;
@@ -60,12 +62,13 @@
 			li {
 				margin: 1rem 0;
 				padding: 1rem 0;
+				transition: all 0.6s ease;
 
 				a {
 					font-size: 1.2rem;
+					transition: all 0.6s ease;
 					&:hover {
 						opacity: 0.7;
-						letter-spacing: 1px;
 					}
 				}
 
@@ -83,4 +86,104 @@
 			}
 		}
 	}
+}
+
+
+//////////////////////////////////////////////////////
+/* Tablets, 600px and up */
+@media only screen and (min-width: 600px) {
+	.top-bar {
+        padding: 2rem;
+		.menu-list {
+			ul {
+				margin: 6rem 2rem;
+				li {
+					margin: 2rem 0;
+				}
+			}
+		}
+    }
+}
+
+
+
+//////////////////////////////////////////////////////
+/* Small laptops, 992px and up */
+@media only screen and (min-width: 992px) {
+	.top-bar {
+		.mobile-icon {
+			display: none;
+		}
+
+		.menu-list {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			position: relative;
+			background: none;
+			width: auto;
+			height: auto;
+			overflow-y: hidden;
+			transform: translateX(0%);
+			ul {
+				margin: 0;
+				text-align: left;
+				li {
+					margin: 0 0.8rem;
+					display: inline-flex;
+					justify-content: flex-end;
+					&:hover {
+						opacity: 0.7;
+					}
+
+					a {
+						font-size: 0.8rem;
+					}
+
+					.language {
+						width: 100%;
+
+						button {
+							padding: 0.5rem 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+//////////////////////////////////////////////////////
+/* Large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.top-bar {
+        padding: 1rem 2rem;
+    }
+}
+
+
+
+//////////////////////////////////////////////////////
+/* Extra Large Destops and Tv, 1440px and up) */
+@media only screen and (min-width: 1440px) {
+	.top-bar {
+        padding: 2rem 4rem;
+
+		.logo a img {
+			width: 11rem;
+		}
+
+		.menu-list {
+			ul li {
+				margin: 0 1.2rem;
+
+				a {
+					font-size: 1rem;
+				}
+			}
+		}
+    }
 }

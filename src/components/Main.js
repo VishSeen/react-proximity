@@ -98,7 +98,7 @@ const Main = () => {
 	///////////////////////////////////////////////////////////////////
 
 	return (
-		<main>
+		<main onScroll={scrolling()}>
 			{ sectIntro }
 
 			{ sectStories }
