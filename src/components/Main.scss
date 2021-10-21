@@ -1,6 +1,26 @@
 @import '../variables.scss';
 
 /////////////////////////////////
+// Animation classes
+.fade {
+    opacity: 0;
+}
+
+.slide-up {
+    transform: translateY(50%);
+    opacity: 0;
+}
+
+.slide-left {
+    transform: translateX(100%);
+}
+
+.hidden {
+    transform: translateY(70%);
+    opacity: 0;
+}
+
+/////////////////////////////////
 
 main {
 	padding: 0 1rem;
@@ -31,7 +51,7 @@ main {
 			a {
 				font-size: 0.95rem;
 				&:hover {
-					color: #e30513;
+					color: $accent-color;
 				}
 			}
 

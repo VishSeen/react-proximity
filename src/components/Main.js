@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Main.scss';
 import IntroImage from '../img/intro-image.png';
 import PencilImage from '../img/pencil.png';
@@ -6,6 +6,9 @@ import PencilImage from '../img/pencil.png';
 ///////////////////////////////////////////////////////////////////
 
 const Main = () => {
+
+	const [scrollY, setScrollY] = useState('');
+	const [isVisible, setIsVisible] = useState(false);
 
 	/**
 	 * Scrolls the view to top when user clicks on 'Return to top'
@@ -16,13 +19,28 @@ const Main = () => {
 	}
 
 
+	/**
+	 * SCROLL DELAY ANIMATION : Delay effect on scrolling
+	 */
+	function smoothScrollMain(scrollYVal) {
+		let delay = (scrollYVal / 3 * 5 / 10);
+		return  delay + "px"
+	}
+
+	window.addEventListener('scroll', function() {
+		if (window.scrollY >= 1000 || window.scrollY <= 1200) {
+			setIsVisible(true)
+		}
+		setScrollY(smoothScrollMain(window.scrollY));
+	});
+
 
 	///////////////////////////////////////////////////////////////////
 	// ELEMENTS
 	const sectIntro = (
 		<section id="sect-intro">
 			<div className="title">
-				<h4 className="fade">HOW WE DO IT</h4>
+				<h4>HOW WE DO IT</h4>
 
 				<h2>We use data-driven creativity <br />
 					to solve business problems</h2>
@@ -32,7 +50,7 @@ const Main = () => {
 				<img src={ IntroImage } alt="Business plan image"></img>
 			</div>
 
-			<div id="element-text" className="texts">
+			<div id="element-text" className="texts" style={{bottom: scrollY}}>
 				<p>
 					By harnessing powerful insights and smart targeting, we’re able to create behavior-changing ideas and
 					experiences that
@@ -51,11 +69,11 @@ const Main = () => {
 		<section id="sect-stories">
 			<div className="title">
 				<img src={PencilImage} alt="Pencil icon"></img>
-				<h4 className="fade">BUSINESS PROBLEMS WE’VE SOLVED</h4>
+				<h4>BUSINESS PROBLEMS WE’VE SOLVED</h4>
 			</div>
 
 			<div className="stories">
-				<article className="slide-up">
+				<article>
 					<h3>
 						Can a love story double <br />
 						as a hearing test?
@@ -66,7 +84,7 @@ const Main = () => {
 					</p>
 				</article>
 
-				<article className="slide-up">
+				<article>
 					<h3>
 						How close to an AFL <br />
 						player can you get?
@@ -98,7 +116,7 @@ const Main = () => {
 	///////////////////////////////////////////////////////////////////
 
 	return (
-		<main onScroll={scrolling()}>
+		<main>
 			{ sectIntro }
 
 			{ sectStories }
