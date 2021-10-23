@@ -13,11 +13,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     padding: 1rem;
+	z-index: 99;
     transition: all 2s ease-in-out;
 
 	.logo {

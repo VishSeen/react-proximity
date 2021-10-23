@@ -10,8 +10,9 @@ const TopBar = () => {
 	const iconNav = 'segment';
 	const closeIcon = ' close';
 
+	const [fixed, setFixed] = useState('absolute');
 	const [slide, setSlide] = useState(hideLeft);
-	const [icon, setIcon] = useState(iconNav)
+	const [icon, setIcon] = useState(iconNav);
 
 	/**
 	 * MOBILE MENU CLICK
@@ -19,16 +20,18 @@ const TopBar = () => {
 	 */
 	const menuIconClick = () => {
 		if(slide === hideLeft) {
+			setFixed('fixed');
 			setSlide('');
 			setIcon(closeIcon);
 		} else {
+			setFixed('absolute');
 			setSlide(hideLeft);
 			setIcon(iconNav);
 		}
 	}
 
 	return (
-		<nav className="top-bar">
+		<nav className="top-bar" style={{position: fixed}}>
 			<div className="logo">
 				<a href="/">
 					<img src={logo} alt="Proximity Indian Ocean Logo"></img>
